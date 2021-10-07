@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">TribalSlider</string>
+    <string name="datos_de_tarjeta_solicitante">Datos de tarjeta solicitante</string>
+
+    <string name="title_bi_en_linea">Bi en línea</string>
+    <string name="title_accept">Aceptar</string>
+    <string name="title_understand">Entendido</string>
+    <string name="title_cancel">Cancelar</string>
+
+    <string name="txt_meses">¿En cuantos meses deseas pagarlo?</string>
+</resources>

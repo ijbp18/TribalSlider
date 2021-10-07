@@ -1,0 +1,133 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F1EAEA"
+    android:clipToPadding="false"
+    android:paddingStart="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingEnd="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".presentation.sliderAmount.viewone.MainActivity">
+
+    <TextView
+        android:id="@+id/text_title_category"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingBottom="5dp"
+        android:text="@string/datos_de_tarjeta_solicitante"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/lyt_info_cardholder"
+        layout="@layout/item_card_limit"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_title_category" />
+
+    <EditText
+        android:id="@+id/edt_text_custom_amount"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:hint="Ingrese el monto"
+        android:paddingStart="20dp"
+        android:inputType="number"
+        android:paddingEnd="20dp"
+        android:digits="1234567890"
+        android:textColor="@color/colorPrimary"
+        android:textColorHint="@color/colorPrimary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lyt_info_cardholder" />
+
+    <Button
+        android:id="@+id/btn_custom_amount"
+        style="@style/ButtonSky"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="OK"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@id/edt_text_custom_amount"
+        app:layout_constraintLeft_toRightOf="@id/edt_text_custom_amount"
+        app:layout_constraintTop_toBottomOf="@id/lyt_info_cardholder" />
+
+    <FrameLayout
+        android:id="@+id/seekArcContainer"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:layout_marginTop="15dp"
+        android:layout_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edt_text_custom_amount">
+
+        <me.tankery.lib.circularseekbar.CircularSeekBar
+            android:id="@+id/seek_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:cs_circle_color="@color/colorSkyLight"
+            app:cs_circle_stroke_width="8dp"
+            app:cs_circle_style="round"
+            app:cs_end_angle="265"
+            app:cs_maintain_equal_circle="true"
+            app:cs_max="80000"
+            app:cs_negative_enabled="false"
+            app:cs_pointer_halo_width="@dimen/seekbar_holo_width"
+            app:cs_pointer_stroke_width="24dp"
+            app:cs_progress="1000"
+            app:cs_start_angle="-85" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/seekArcProgressTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Monto a cotizar"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/text_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="GTQ 1.000.00"
+                android:textColor="@android:color/black"
+                android:textSize="28sp" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1.5dp"
+                android:layout_marginStart="70dp"
+                android:layout_marginEnd="70dp"
+                android:background="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/seekArcProgressAvailable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:text="De GTQ 80,000.00 disponibles"
+                android:textColor="#919190"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
